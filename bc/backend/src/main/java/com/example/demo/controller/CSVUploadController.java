@@ -20,6 +20,14 @@ public class CSVUploadController {
     }
 
     @PostMapping
+    /**
+     * Handles the file upload request and saves the uploaded file.
+     *
+     * @param file the MultipartFile object representing the uploaded file
+     * @return a ResponseEntity containing a success message if the file is uploaded and stored successfully,
+     *         or an error message if the upload fails
+     * @throws IOException if an I/O error occurs while saving the file
+     */
     public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
         try {
             csvService.saveFile(file);
