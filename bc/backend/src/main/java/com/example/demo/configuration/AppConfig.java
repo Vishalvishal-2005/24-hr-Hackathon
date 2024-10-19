@@ -9,6 +9,12 @@ import com.example.demo.util.JwtUtil;
 public class AppConfig {
 
     @Bean
+    /**
+     * Creates and returns a new instance of the {@link JwtUtil} class.
+     *
+     * @return a new instance of {@link JwtUtil}
+     * @throws IllegalStateException if the JwtUtil cannot be created due to some internal error.
+     */
     public JwtUtil jwtUtil() {
         return new JwtUtil();
     }

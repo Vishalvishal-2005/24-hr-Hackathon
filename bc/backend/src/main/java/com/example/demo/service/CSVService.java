@@ -24,6 +24,17 @@ public class CSVService {
         this.fileMetadataRepository = fileMetadataRepository;
     }
 
+    /**
+     * Saves the uploaded file to the user's home directory under the "uploads" folder.
+     *
+     * <p>This method checks if the provided file is not empty, creates the necessary
+     * directories if they do not exist, and transfers the file to the specified location.
+     * It also saves metadata about the file to the database.</p>
+     *
+     * @param file the MultipartFile object representing the uploaded file
+     * @throws IOException if an I/O error occurs during file saving or if the file is empty
+     *                     This exception is thrown specifically when the provided file is empty.
+     */
     public void saveFile(MultipartFile file) throws IOException {
         if (!file.isEmpty()) {
             // Set directory path to the user's home directory
